@@ -1,5 +1,8 @@
 package miprimeraapp.com.ejemploretrofit.remove;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import java.util.List;
@@ -7,7 +10,7 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import java.util.List;
 
-public class Earthquake {
+public class Earthquake implements Parcelable {
 
     @SerializedName("datetime")
     @Expose
@@ -122,6 +125,15 @@ public class Earthquake {
         return this;
     }
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+
+    }
 }
 
 
